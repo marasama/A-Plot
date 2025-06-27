@@ -126,3 +126,19 @@ void A_Plot::plotMultiple(const std::vector<Plot> &plots)
 
     fflush(plot_pipe);
 }
+
+void A_Plot::setLabel(const std::string &axis, const std::string &label)
+{
+    if (plot_pipe)
+    {
+        fprintf(plot_pipe, "set %s \"%s\"\n", axis.c_str(), label.c_str());
+    }
+}
+
+void A_Plot::setTitle(const std::string &title)
+{
+    if (plot_pipe)
+    {
+        fprintf(plot_pipe, "set title \"%s\"\n", title.c_str());
+    }
+}

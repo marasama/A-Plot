@@ -38,6 +38,8 @@ class A_Plot
     int init();
     void plot(const Plot &plotObj);
     void plotMultiple(const std::vector<Plot> &plots);
+    void setLabel(const std::string &axis, const std::string &label);
+    void setTitle(const std::string &title);
 
     Plot createLinePlotX(double slope,
       double intercept,
